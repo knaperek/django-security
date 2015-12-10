@@ -20,12 +20,12 @@ class Test(Command):
         errno = subprocess.call([sys.executable, 'testing/manage.py', 'test'])
         raise SystemExit(errno)
 
-setup(name="django-security",
+setup(name="django-security-knaperek",
       description='A collection of tools to help secure a Django project.',
       long_description=readme,
       maintainer="SD Elements",
       maintainer_email="django-security@sdelements.com",
-      version="0.9.3",
+      version="0.9.4",
       packages=["security", "security.south_migrations", "security.migrations", "security.auth_throttling"],
       url='https://github.com/sdelements/django-security',
       classifiers=[
