@@ -224,6 +224,9 @@ class MandatoryPasswordChangeMiddleware(BaseMiddleware):
 
         ``EXEMPT_URL_NAMES``    list of URLs that do not trigger password
         change request
+
+        ``INCLUDE_SUPERUSERS``  also check superusers for password change,
+        default False
     """
 
     OPTIONAL_SETTINGS = ("MANDATORY_PASSWORD_CHANGE",)
@@ -543,9 +546,12 @@ class ContentSecurityPolicyMiddleware(object):
 
     # sandbox allowed arguments
     # http://www.w3.org/html/wg/drafts/html/master/single-page.html#sandboxing
+    # https://www.w3.org/TR/CSP2/
     _CSP_SANDBOX_ARGS = [
         '',
         'allow-forms',
+        'allow-pointer-lock',
+        'allow-popups',
         'allow-same-origin',
         'allow-scripts',
         'allow-top-navigation',
